@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PostActivity">
+
+    <EditText
+        android:id="@+id/etPostTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:hint="Donation Title" />
+
+    <EditText
+        android:id="@+id/etPostDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etPostTitle"
+        android:layout_centerHorizontal="true"
+        android:hint="Donation Detail" />
+
+    <EditText
+        android:id="@+id/etDonationamount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etPostDescription"
+        android:layout_centerHorizontal="true"
+        android:hint="Donation Amount" />
+    <Button
+        android:layout_width="wrap_content"
+        android:inputType="number"
+        android:layout_height="wrap_content"
+        android:id="@+id/btpost"
+        android:layout_below="@id/etDonationamount"
+        android:layout_centerHorizontal="true"
+        android:text="POST"/>
+
+</RelativeLayout>

@@ -7,34 +7,29 @@
     tools:context=".MenuActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btDonationList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/button2"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="78dp"
+        android:layout_marginTop="140dp"
+        android:layout_centerHorizontal="true"
         android:text="Donation List" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btApplication"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/button3"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="-22dp"
-        android:layout_marginTop="152dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/btDonationList"
         android:text="Donation Application" />
-
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btLinkCard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="119dp"
-        android:layout_marginLeft="119dp"
-        android:layout_marginTop="214dp"
-        android:text="Pubilc Donation" />
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/btApplication"
+        android:text="Link Payment Card" />
+
+
 </RelativeLayout>

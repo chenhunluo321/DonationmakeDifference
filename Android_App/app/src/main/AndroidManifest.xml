@@ -17,7 +17,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginActivity" />
-        <activity android:name=".MenuActivity"></activity>
+        <activity android:name=".MenuActivity" />
+        <activity android:name=".SpecialUserActivity" />
+        <activity android:name=".DonationListActivity" />
+        <activity android:name=".DonationDetailActivity" />
+        <activity android:name=".ApplicationActivity" />
+        <activity android:name=".LinkCardActivity" />
+        <activity android:name=".AdminMenuActivity" />
+        <activity android:name=".ApplicationListActivity" />
+        <activity android:name=".PostActivity"></activity>
     </application>
 
 </manifest>

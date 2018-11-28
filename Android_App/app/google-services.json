@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "890419828806",
+    "firebase_url": "https://donationmakedifference.firebaseio.com",
+    "project_id": "donationmakedifference",
+    "storage_bucket": "donationmakedifference.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:890419828806:android:62bbb4a1b6f87cdd",
+        "android_client_info": {
+          "package_name": "com.e.zhongjieruan.donationmakedifference"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "890419828806-2c64qf5e5n5ijnpt4ddrhn6h708cavfg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZ74TGfDLFdWVFdY5BYUkPn72QMWjcpzw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

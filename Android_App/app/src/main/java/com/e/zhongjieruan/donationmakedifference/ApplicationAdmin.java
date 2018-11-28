@@ -3,9 +3,13 @@ package com.e.zhongjieruan.donationmakedifference;
 import java.util.ArrayList;
 
 public class ApplicationAdmin extends DonationApplication {
-    @Override
-    public void doApplication() {
+    public ApplicationAdmin(String userId, String donationTitle, int govIssuedId, String donationDetail) {
+        super(userId, donationTitle, govIssuedId, donationDetail);
+    }
 
+    @Override
+    public long doApplication() {
+        return 1;
     }
 
     @Override

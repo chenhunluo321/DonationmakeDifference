@@ -7,7 +7,7 @@
     tools:context=".LoginActivity">
 
     <EditText
-        android:id="@+id/etLoginUsername"
+        android:id="@+id/etLoginEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -22,21 +22,11 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_below="@id/etLoginUsername"
+        android:layout_below="@id/etLoginEmail"
         android:ems="10"
         android:hint="Password"
         android:layout_marginTop="20dp"
         android:inputType="textPassword" />
-
-    <TextView
-        android:id="@+id/tvForgotPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_below="@id/etLoginPassword"
-        android:layout_marginTop="20dp"
-        android:text="Forgot Password?" />
 
     <Button
         android:id="@+id/btLogin"
@@ -44,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_below="@id/tvForgotPassword"
+        android:layout_below="@id/etLoginPassword"
         android:layout_marginTop="20dp"
         android:text="Log in" />
 
