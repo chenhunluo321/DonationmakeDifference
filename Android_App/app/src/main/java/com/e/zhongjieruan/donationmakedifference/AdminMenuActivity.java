@@ -8,6 +8,7 @@ import android.widget.Button;
 
 public class AdminMenuActivity extends AppCompatActivity {
     private Button applications;
+    private Button donations;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,10 +16,17 @@ public class AdminMenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin_menu);
 
         applications = findViewById(R.id.btCheckApplicationList);
+        donations = findViewById(R.id.btAdminDonation);
         applications.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(AdminMenuActivity.this, ApplicationListActivity.class));
+            }
+        });
+        donations.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AdminMenuActivity.this, DonationListActivity.class));
             }
         });
     }

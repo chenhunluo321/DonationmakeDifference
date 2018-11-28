@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditUserDonationActivity">
+
+    <EditText
+        android:id="@+id/etDonationTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:textSize="30dp" />
+    <EditText
+        android:id="@+id/etDonationDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/etDonationTitle"
+        android:textSize="30dp" />
+    <EditText
+        android:id="@+id/etDonationAmountRequire"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/etDonationDetail"
+        android:textSize="30dp"/>
+
+    <Button
+        android:id="@+id/btSaveChange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/etDonationAmountRequire"
+        android:text="SAVE"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btDeleteDonation"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/btSaveChange"
+        android:text="DELETE POST"/>
+
+</RelativeLayout>

@@ -24,11 +24,13 @@ public class DonationListActivity extends AppCompatActivity {
     private Database sqliteHelper;
     private SpotAdapter spotAdapter;
     private RecyclerView rvSpots;
+    DonationAdmin donationAdmin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donation_list);
+        donationAdmin=new DonationAdmin();
         if (sqliteHelper == null) {
             sqliteHelper = new Database(this);
         }
@@ -112,6 +114,19 @@ public class DonationListActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
+
+            holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    Intent intent = new Intent(context, EditUserDonationActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("title", spot.getDonationName()); ;
+                    intent.putExtras(bundle);
+                    startActivity(intent);
+                    return true;
+                }
+            });
+
         }
     }
 

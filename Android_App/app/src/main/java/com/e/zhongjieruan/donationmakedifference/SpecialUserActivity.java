@@ -42,7 +42,7 @@ public class SpecialUserActivity extends AppCompatActivity {
         mydonation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SpecialUserActivity.this, DonationDetailActivity.class);
+                Intent intent = new Intent(SpecialUserActivity.this, EditUserDonationActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("title", user.getDonation().getDonationName()); ;
                 intent.putExtras(bundle);

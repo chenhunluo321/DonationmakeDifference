@@ -1,6 +1,9 @@
 package com.e.zhongjieruan.donationmakedifference;
 
+import android.content.Context;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class ApplicationAdmin extends DonationApplication {
     public ApplicationAdmin(String userId, String donationTitle, int govIssuedId, String donationDetail) {
@@ -8,12 +11,13 @@ public class ApplicationAdmin extends DonationApplication {
     }
 
     @Override
-    public long doApplication() {
+    public long doApplication(Context context, ApplicationUser application) {
         return 1;
     }
 
     @Override
-    public ArrayList<DonationApplication> viewApplication() {
-        return null;
+    public List<ApplicationUser> viewApplication(Context context) {
+        List<ApplicationUser> list = null;
+        return list;
     }
 }

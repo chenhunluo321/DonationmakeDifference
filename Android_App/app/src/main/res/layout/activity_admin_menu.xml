@@ -23,14 +23,14 @@
         <!--android:layout_below="@id/btDonationList"-->
         <!--android:text="Post Donation" />-->
 
-    <!--<Button-->
-        <!--android:id="@+id/btMyDonation"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_centerVertical="true"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:layout_below="@id/btPostDonate"-->
-        <!--android:text="My Donation" />-->
+    <Button
+        android:id="@+id/btAdminDonation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/btCheckApplicationList"
+        android:text="Manage Donations" />
     <!--<Button-->
         <!--android:id="@+id/btLinkCard"-->
         <!--android:layout_width="wrap_content"-->

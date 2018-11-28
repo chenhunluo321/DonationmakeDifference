@@ -1,6 +1,9 @@
 package com.e.zhongjieruan.donationmakedifference;
 
+import android.content.Context;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public abstract class DonationApplication {
     private String userId;
@@ -49,8 +52,7 @@ public abstract class DonationApplication {
     }
 
     //User: submit the application Admin: review the application
-    public abstract long doApplication();
-
+    public abstract long doApplication(Context context,ApplicationUser application);
     //User: see their own application Admin: show list of applications
-    public abstract ArrayList<DonationApplication> viewApplication();
+    public abstract List<ApplicationUser> viewApplication(Context context);
 }

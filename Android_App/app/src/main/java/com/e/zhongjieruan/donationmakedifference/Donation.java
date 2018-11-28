@@ -1,5 +1,6 @@
 package com.e.zhongjieruan.donationmakedifference;
 
+import android.content.Context;
 import android.util.Log;
 
 public abstract class Donation {
@@ -7,6 +8,7 @@ public abstract class Donation {
     private int donationAmount;
     private String donationDetail;
     private int currentReceived;
+    private Context context;
 
 
     public Donation(String donationName, int donationAmount, String donationDetail) {
@@ -14,6 +16,14 @@ public abstract class Donation {
         this.donationAmount = donationAmount;
         this.donationDetail = donationDetail;
         this.currentReceived=0;
+    }
+
+    public Donation(String donationName, int donationAmount, String donationDetail, Context context) {
+        this.donationName = donationName;
+        this.donationAmount = donationAmount;
+        this.donationDetail = donationDetail;
+        this.currentReceived=0;
+        this.context=context;
     }
     Donation(){}
 
@@ -46,9 +56,6 @@ public abstract class Donation {
     }
 
     public Boolean whetherAmountReached(int amountneed, int donationReceive){
-        Log.d("Testamount",Integer.toString(donationReceive));
-        Log.d("amount222",Integer.toString(donationAmount));
-
         if(amountneed>donationReceive)
             return true;
         else
@@ -59,10 +66,9 @@ public abstract class Donation {
 
     }
 
-    //SpecialUser can edit the post they posted   Admin canedit any posts
-    public abstract void editPost();
-    public abstract void deletePost();
-
-
+    //SpecialUser can edit the post they posted   Admin can edit any posts
+    public abstract long editPost(Context context, DonationSpecialUser donationSpecialUser);
+    //SpecialUser can delete their own past Admin candelete any post
+    public abstract int deletePost(Context context, String name);
 
 }

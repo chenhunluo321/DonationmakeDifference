@@ -73,15 +73,6 @@ private static final String DB_NAME = "DonationMakeDifference";
             int govId = cursor.getInt(2);
             String applicationDetail = cursor.getString(3);
             ApplicationUser application = new ApplicationUser(userid, applicationTitle, govId, applicationDetail) {
-//                @Override
-//                public long doApplication() {
-//
-//                }
-
-                @Override
-                public ArrayList<DonationApplication> viewApplication() {
-                    return null;
-                }
             };
             applicationList.add(application);
         }
@@ -105,11 +96,6 @@ private static final String DB_NAME = "DonationMakeDifference";
             int amount = cursor.getInt(1);
             String detail = cursor.getString(2);
             DonationSpecialUser donation = new DonationSpecialUser(title, amount, detail) {
-
-                public void doApplication() {
-
-                }
-
 
                 public ArrayList<DonationApplication> viewApplication() {
                     return null;
@@ -174,10 +160,31 @@ private static final String DB_NAME = "DonationMakeDifference";
         return db.update(TABLE_Donations, values, whereClause, whereArgs);
     }
 
+    public int updataUserDonation(DonationSpecialUser user) {
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COL_donationTitle, user.getDonationName());
+        values.put(COL_donationAmount, user.getDonationAmount());
+        values.put(COL_donationDetail, user.getDonationDetail());
+
+        String whereClause = COL_donationTitle + " = ?;";
+        String[] whereArgs = {user.getDonationName()};
+        return db.update(TABLE_Donations, values, whereClause, whereArgs);
+    }
+
+
     public int deleteApplication(String title) {
         SQLiteDatabase db = getWritableDatabase();
         String whereClause = COL_appdonationTitle + " = ?;";
         String[] whereArgs = {title};
         return db.delete(TABLE_Application, whereClause, whereArgs);
     }
+
+    public int deleteDonation(String title) {
+        SQLiteDatabase db = getWritableDatabase();
+        String whereClause = COL_donationTitle + " = ?;";
+        String[] whereArgs = {title};
+        return db.delete(TABLE_Donations, whereClause, whereArgs);
+    }
+
 }

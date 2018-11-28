@@ -38,7 +38,7 @@ public class ApplicationActivity extends AppCompatActivity {
 
                 firebaseAuth = FirebaseAuth.getInstance();
                 ApplicationUser application = new ApplicationUser(firebaseAuth.getUid(),title,id,detail);
-                long result = database.insertApplication(application);
+                long result = application.doApplication(getApplicationContext(),application);
                 if (result != -1) {
                     Toast.makeText(ApplicationActivity.this, "Submit Success",
                             Toast.LENGTH_SHORT).show();

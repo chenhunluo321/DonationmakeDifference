@@ -1,25 +1,16 @@
 package com.e.zhongjieruan.donationmakedifference;
 
-import android.provider.ContactsContract;
-
 public class DonationFacade {
-    private String cardName;
-    private int cardNumber;
-    private String cardType;
     private int amountDonate;
-    private int donationAmount;
+    private int donationRequired;
     Payment payment;
     Donation donation;
-    Database database;
     User user;
 
 
     public DonationFacade(String cardName, int cardNumber, String cardType, int amountDonate, int donationAmount, User user) {
-        this.cardName = cardName;
-        this.cardNumber = cardNumber;
-        this.cardType = cardType;
         this.amountDonate = amountDonate;
-        this.donationAmount = donationAmount;
+        this.donationRequired = donationAmount;
         this.user=user;
         payment = new Payment(cardName,cardType,cardNumber);
         donation = new DonationSpecialUser(donationAmount);
@@ -27,7 +18,7 @@ public class DonationFacade {
 
     public String donate(){
         if (payment.validateCardInfo(user)){
-            if(donation.whetherAmountReached(donationAmount,amountDonate)){
+            if(donation.whetherAmountReached(donationRequired,amountDonate)){
                 return "Success";
             }
             else{
@@ -39,6 +30,6 @@ public class DonationFacade {
         }
     }
     public int updateNewAmount(){
-        return donationAmount-amountDonate;
+        return donationRequired -amountDonate;
     }
 }
