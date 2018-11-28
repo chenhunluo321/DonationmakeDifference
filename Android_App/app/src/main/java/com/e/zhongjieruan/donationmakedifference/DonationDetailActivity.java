@@ -1,6 +1,5 @@
 package com.e.zhongjieruan.donationmakedifference;
 
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,11 +23,10 @@ public class DonationDetailActivity extends AppCompatActivity {
     private TextView amountRequired;
     private EditText userInput;
     private Button donateButton;
-    private Database sqliteHelper;
+    private Database database;
     private DonationSpecialUser donationSpecialUser;
     private FirebaseDatabase firebaseDatabase;
     private FirebaseAuth firebaseAuth;
-    private boolean validOrNot;
     DonationFacade donationFacade;
     User user;
 
@@ -36,20 +34,19 @@ public class DonationDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donation_detail);
-        if (sqliteHelper == null) {
-            sqliteHelper = new Database(this);
+        if (database == null) {
+            database = new Database(this);
         }
         findViews();
         getUserData();
         donateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 donationFacade = new DonationFacade(user.getPayment().getCardHolderName(),user.getPayment().getCardNumber(),user.getPayment().getCardType(),Integer.parseInt(userInput.getText().toString()),Integer.parseInt(amountRequired.getText().toString()),user);
                 String result =donationFacade.donate();
                 if (result.equals("Success")) {
                     Toast.makeText(DonationDetailActivity.this, "Successfully Donated", Toast.LENGTH_SHORT).show();
-                    sqliteHelper.updateDonationAmount(donationSpecialUser,donationFacade.updateNewAmount());
+                    database.updateDonationAmount(donationSpecialUser,donationFacade.updateNewAmount());
                 }
                 else if (result.equals("Donate too much"))
                     Toast.makeText(DonationDetailActivity.this,"Donate too much",Toast.LENGTH_SHORT).show();
@@ -67,7 +64,7 @@ public class DonationDetailActivity extends AppCompatActivity {
         userInput = (EditText) findViewById(R.id.etUserDonationAmount);
         donateButton = (Button) findViewById(R.id.btDonateMoney);
         String donName = getIntent().getExtras().getString("title");
-        donationSpecialUser = sqliteHelper.findByTitle(donName);
+        donationSpecialUser = database.findByTitle(donName);
         if (donationSpecialUser == null) {
             Toast.makeText(this,"No Item Found",Toast.LENGTH_SHORT).show();
         }

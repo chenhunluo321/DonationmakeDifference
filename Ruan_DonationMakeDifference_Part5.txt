@@ -1,0 +1,3 @@
+https://www.screencast.com/t/fOuhYqxvL
+
+I forgot to mention in the video that participants involved in the Facade design pattern are DonationSpecialUser, Payment, and User.
