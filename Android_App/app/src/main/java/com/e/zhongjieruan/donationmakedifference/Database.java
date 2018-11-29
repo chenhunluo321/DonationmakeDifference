@@ -11,6 +11,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Database class which manage the DonationMakeDifference DB which
+ * contains Application table and Donation Table
+ */
 public class Database extends SQLiteOpenHelper {
 
 private static final String DB_NAME = "DonationMakeDifference";
@@ -58,6 +62,10 @@ private static final String DB_NAME = "DonationMakeDifference";
         onCreate(db);
     }
 
+    /**
+     * Get all ApplicationUser objects from database
+     * @return return list of ApplicationUser
+     */
     public List<ApplicationUser> getAllApplication() {
         SQLiteDatabase db = getReadableDatabase();
         String[] columns = {
@@ -82,6 +90,10 @@ private static final String DB_NAME = "DonationMakeDifference";
     }
 
 
+    /**
+     * Get all DonationSpecialUser objects from database
+     * @return return list of DonationSpecialUser
+     */
     public List<DonationSpecialUser> getAllDonation() {
         SQLiteDatabase db = getReadableDatabase();
         String[] columns = {
@@ -108,6 +120,11 @@ private static final String DB_NAME = "DonationMakeDifference";
         return donationList;
     }
 
+    /**
+     * Find specific donation from Donation Table
+     * @param donationTitle The title of a donation
+     * @return return DonationSpecialUser object which contains all donation informations.
+     */
     public DonationSpecialUser findByTitle(String donationTitle) {
         SQLiteDatabase db = getWritableDatabase();
         String[] columns = {
@@ -128,6 +145,11 @@ private static final String DB_NAME = "DonationMakeDifference";
         return donationSpecialUser;
     }
 
+    /**
+     * Add a new donation application user created in to the database
+     * @param donationApplication donationApplication object that contains donation application information
+     * @return return type long indicate whether insert is successful
+     */
     public long insertApplication(ApplicationUser donationApplication) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -139,6 +161,11 @@ private static final String DB_NAME = "DonationMakeDifference";
         return db.insert(TABLE_Application, null, values);
     }
 
+    /**
+     * Add a new donation user created in to the database
+     * @param donation DonationSpecialUser object that contains donation information
+     * @return return type long indicate whether insert is successful
+     */
     public long insertDonation(DonationSpecialUser donation) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -160,6 +187,11 @@ private static final String DB_NAME = "DonationMakeDifference";
         return db.update(TABLE_Donations, values, whereClause, whereArgs);
     }
 
+    /**
+     * When user reedit their donation, update the change to the database
+     * @param user DonationSpecialUser object that has user information
+     * @return return type int indicate whether insert is successful
+     */
     public int updataUserDonation(DonationSpecialUser user) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -172,7 +204,11 @@ private static final String DB_NAME = "DonationMakeDifference";
         return db.update(TABLE_Donations, values, whereClause, whereArgs);
     }
 
-
+    /**
+     * Delete a application from data base
+     * @param title title of the application
+     * @return return type int indicate whether insert is successful
+     */
     public int deleteApplication(String title) {
         SQLiteDatabase db = getWritableDatabase();
         String whereClause = COL_appdonationTitle + " = ?;";
@@ -180,6 +216,11 @@ private static final String DB_NAME = "DonationMakeDifference";
         return db.delete(TABLE_Application, whereClause, whereArgs);
     }
 
+    /**
+     * Delete a donation from data base
+     * @param title title of the donation
+     * @return return type int indicate whether insert is successful
+     */
     public int deleteDonation(String title) {
         SQLiteDatabase db = getWritableDatabase();
         String whereClause = COL_donationTitle + " = ?;";

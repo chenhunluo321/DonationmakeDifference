@@ -1,16 +1,22 @@
 package com.e.zhongjieruan.donationmakedifference;
 
 import android.content.Context;
-import android.util.Log;
 
+/**
+ * This class contains information for a single donation and donation related method
+ */
 public abstract class Donation {
     private String donationName;
     private int donationAmount;
     private String donationDetail;
     private int currentReceived;
-    private Context context;
 
-
+    /**
+     * Constructor that initiate the donation name, donation amount, and donation detail.
+     * @param donationName Title of the donation
+     * @param donationAmount How much money needed for this donation
+     * @param donationDetail Detailed information about this donation
+     */
     public Donation(String donationName, int donationAmount, String donationDetail) {
         this.donationName = donationName;
         this.donationAmount = donationAmount;
@@ -18,13 +24,9 @@ public abstract class Donation {
         this.currentReceived=0;
     }
 
-    public Donation(String donationName, int donationAmount, String donationDetail, Context context) {
-        this.donationName = donationName;
-        this.donationAmount = donationAmount;
-        this.donationDetail = donationDetail;
-        this.currentReceived=0;
-        this.context=context;
-    }
+    /**
+     * Default Constructor
+     */
     Donation(){}
 
     public Donation(int currentReceived) {
@@ -62,13 +64,29 @@ public abstract class Donation {
             return false;
     }
 
-    public void donate(){
-
-    }
-
     //SpecialUser can edit the post they posted   Admin can edit any posts
+
+    /**
+     * This is a abstract method, child classes can implement it differently
+     * SpecialUser is a user who have been proved by admin and be able to post donation
+     * Special User can edit the post they posted
+     * Admin canedit any posts
+     * @param context The context of the Andriod activity used to call database
+     * @param donationSpecialUser The user who posted current donation
+     * @return return Return type of long, >0 indicate submit or review successful
+     */
     public abstract long editPost(Context context, DonationSpecialUser donationSpecialUser);
-    //SpecialUser can delete their own past Admin candelete any post
+    //SpecialUser can delete their own post Admin candelete any post
+
+    /**
+     * This is a abstract method, child classes can implement it differently
+     * SpecialUser is a user who have been proved by admin and be able to post donation
+     * Special user can delete their own post
+     * Admin can delete any post if admin this the post is inappropriate
+     * @param context The context of the Andriod activity used to call database
+     * @param name Title of the donation that need to be deleted
+     * @return return Return type of int, >0 indicate submit or review successful
+     */
     public abstract int deletePost(Context context, String name);
 
 }

@@ -1,36 +1,24 @@
 package com.e.zhongjieruan.donationmakedifference;
 
-import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.util.Log;
-import android.widget.Toast;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.security.cert.TrustAnchor;
-import java.util.Random;
-
+/**
+ * This class contains user information and user related action
+ */
 public class User {
     private int userid;
     private String username;
     private String useremail;
     private String userpassword;
     private boolean cardLinked;
-
     private Payment payment;
-
-    //Whether user can post donation
     private Boolean canPost;
     private DonationSpecialUser donation;
 
+    /**
+     * Constructor that initialize user account information.
+     * @param username username of the account
+     * @param useremail email address associated with the account
+     * @param userpassword password of the account
+     */
     public User(String username, String useremail, String userpassword) {
         this.username = username;
         this.useremail = useremail;
@@ -51,6 +39,10 @@ public class User {
         payment = new Payment();
         donation = new DonationSpecialUser();
     }
+
+    /**
+     * Default constructor
+     */
     public User(){}
     public int getUserid() {
         return userid;
@@ -112,6 +104,11 @@ public class User {
         this.donation = donation;
     }
 
+    /**
+     * This method check whether the information user inputed for account
+     * registration is valid
+     * @return return type is a boolean indicate whether registration is success
+     */
     public boolean registrationVerification(){
         if (username.isEmpty() || userpassword.isEmpty() || useremail.isEmpty()) {
             return false;
@@ -119,6 +116,13 @@ public class User {
         return true;
     }
 
+    /**
+     * This method will added payment information to user's existed account
+     * @param name Credit card holder name
+     * @param type Credit card type
+     * @param number Credit card type
+     * @return Return User object which will update the old one in database
+     */
     public User addPaymentInfo(String name, String type, int number){
         payment = new Payment();
         payment.setCardHolderName(name);
@@ -128,11 +132,23 @@ public class User {
         return this;
     }
 
+    /**
+     * This method will mark can post after admin prove user's application
+     * when canPost attribute is true
+     * user will be able to post their own donation
+     * @return return type is User
+     */
     public User updateUserStatus(){
         canPost = true;
         return this;
     }
 
+    /**
+     * This method is called when user post their own donation
+     * The donation user posted will be binded to this user
+     * @param donation2 the donation user posted
+     * @return return type is User
+     */
     public User linkUserPost(DonationSpecialUser donation2){
         donation = new DonationSpecialUser();
         this.donation=donation2;
