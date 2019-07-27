@@ -52,11 +52,9 @@ Import the repo from the Android studio and run it
 ![image](https://user-images.githubusercontent.com/32112516/61989206-58af4d80-b01b-11e9-8a4e-db7a6c10bf1c.png)
 
 
-## 🎈 Usage 
-Add notes about how to use the system.
+## 🎈 Design Pattern Implemented
+![image](https://user-images.githubusercontent.com/32112516/61989224-9b712580-b01b-11e9-8843-6b11e08a6c35.png
 
-## 🚀 Deployment <a name = "deployment"></a>
-Add additional notes about how to deploy this on a live system.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 - [MongoDB](https://www.mongodb.com/) - Database
