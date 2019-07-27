@@ -53,21 +53,14 @@ Import the repo from the Android studio and run it
 
 
 ## 🎈 Design Pattern Implemented
-![image](https://user-images.githubusercontent.com/32112516/61989224-9b712580-b01b-11e9-8843-6b11e08a6c35.png
+![image](https://user-images.githubusercontent.com/32112516/61989224-9b712580-b01b-11e9-8843-6b11e08a6c35.png)
 
 
 ## ⛏️ Built Using <a name = "built_using"></a>
-- [MongoDB](https://www.mongodb.com/) - Database
-- [Express](https://expressjs.com/) - Server Framework
-- [VueJs](https://vuejs.org/) - Web Framework
-- [NodeJs](https://nodejs.org/en/) - Server Environment
+- [SQLite] - Database
+- [Android Studio] - Android Application
+- [Firebase] - Centralized Database
 
 ## ✍️ Authors <a name = "authors"></a>
-- [@kylelobo](https://github.com/kylelobo) - Idea & Initial work
+- [@chenhunluo321](https://github.com/chenhunluo321) - Idea & Initial work
 
-See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors) who participated in this project.
-
-## 🎉 Acknowledgements <a name = "acknowledgement"></a>
-- Hat tip to anyone whose code was used
-- Inspiration
-- References
