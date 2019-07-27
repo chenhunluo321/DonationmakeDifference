@@ -49,10 +49,7 @@ Import the repo from the Android studio and run it
 
 
 ## 🔧 Class Diagram 
-![image](https://user-images.githubusercontent.com/32112516/61989105-d6725980-b019-11e9-8717-598ca7af080c.png)
-
-
-
+![image](https://user-images.githubusercontent.com/32112516/61989206-58af4d80-b01b-11e9-8a4e-db7a6c10bf1c.png)
 
 
 ## 🎈 Usage 
