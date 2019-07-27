@@ -14,10 +14,6 @@
 
 ---
 
-<p align="center"> Few lines describing your project.
-    <br> 
-</p>
-
 
 
 ## 🧐 About <a name = "about"></a>
